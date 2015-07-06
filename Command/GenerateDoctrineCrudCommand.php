@@ -289,7 +289,10 @@ EOT
 
     protected function createGenerator($bundle = null)
     {
-        return new DoctrineCrudGenerator($this->getContainer()->get('filesystem'));
+        return new DoctrineCrudGenerator(
+            $this->getContainer()->get('filesystem'),
+            $this->getContainer()->getParameter('kernel.root_dir')
+        );
     }
 
     protected function getFormGenerator($bundle = null)
