@@ -129,6 +129,7 @@ EOT
         }
 
         // routing
+        $output->write('Updating the routing: ');
         if ('annotation' != $format) {
             $runner($this->updateRouting($questionHelper, $input, $output, $bundle, $format, $entity, $prefix));
         } else {
